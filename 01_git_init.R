@@ -14,15 +14,15 @@
 
 
 # --- 1) Imposta l'email usata da Git per i commit (metti la TUA email) ---
-system('git config --global user.email "Your@Email.com"')
+system('git config --global user.email "federico.cerroni@student.univaq.it"')
 
 # --- 2) Imposta il nome usato da Git per i commit (metti il TUO nome e cognome) ---
-system('git config --global user.name "YourName"')
+system('git config --global user.name "FedericoCerroni"')
 
 # --- 3) Controlla che Git abbia salvato le impostazioni globali ---
 # (stampa la lista delle configurazioni globali; cerca user.name e user.email)
 system("git config --global --list")
-
+system("gift config --local -l")
 
 # ============================================================
 # Windows users (solo se i comandi sopra NON funzionano)
@@ -34,10 +34,10 @@ system("git config --global --list")
 # git <- '"C:/Program Files/Git/cmd/git.exe"'
 
 # Imposta email:
-# system(paste(git, 'config --global user.email "Your@Email.com"'))
+# system(paste(git, 'config --global user.email "federico.cerroni@student.univaq.it"'))
 
 # Imposta nome:
-# system(paste(git, 'config --global user.name "YourName"'))
+# system(paste(git, 'config --global user.name "FedericoCerroni"'))
 
 # Verifica:
 # system(paste(git, "config --global --list"))
@@ -58,4 +58,7 @@ usethis::create_github_token()
 # --- 5) Salva il token nel credential manager usato da Git sul tuo computer ---
 # (quando chiede "Enter password or token:", incolla il token e premi invio)
 gitcreds::gitcreds_set()
+
+usethis::use_git_config(user.name = "FedericoCerroni", user.email = "federico.cerroni@student.univaq.it")
+usethis::use_git_remote(name="origin", url= "https://github.com/fedecer13/gestione-dati.git")
 
